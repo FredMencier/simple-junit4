@@ -1,2 +1,2 @@
 # simple-junit4
-Simple Junit
+Simple projet utilisant Junit4
