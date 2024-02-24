@@ -1,5 +1,6 @@
 package finance;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -57,5 +58,14 @@ public class Financial implements FinancialInterface {
             throw new RateUnavailableException("Currency rate not found for change " + fromCurrency + "/" + toCurrency);
         }
         return amount * rate;
+    }
+
+    public List<String> getAvailableCurrencies() {
+        try {
+            Thread.sleep(4000);
+            return List.of("CHF", "EUR", "USD");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -52,4 +52,9 @@ public class FinancialTest {
     public void calculateChangeWithException() throws RateUnavailableException {
         financial.calculateChange("CHF", "JPY", 1000D);
     }
+
+    @Test(timeout = 5000)
+    public void getAvailableCurrencies() {
+        Assert.assertEquals(3, financial.getAvailableCurrencies().size());
+    }
 }
