@@ -59,6 +59,10 @@ public class Financial implements FinancialInterface {
         return amount * rate;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getAvailableCurrencies() {
         try {
             Thread.sleep(4000);
@@ -66,5 +70,10 @@ public class Financial implements FinancialInterface {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getMarketData(String symbol) throws MarketDataException {
+        MarketData marketData = new MarketData("https", "query1.finance.yahoo.com", "v8");
+        return marketData.getMarketData(symbol);
     }
 }

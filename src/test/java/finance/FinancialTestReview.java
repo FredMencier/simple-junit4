@@ -2,9 +2,12 @@ package finance;
 
 import jdk.jfr.Enabled;
 import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.Assert.assertThrows;
 
 public class FinancialTestReview {
 
@@ -26,7 +29,7 @@ public class FinancialTestReview {
     }
 
     @Test
-    @Ignore
+//    @Ignore
     public void calculateAverage() {
         double average = financial.calculateAverage(doubleList);
         Assert.assertEquals(5.5D, average, 0D);
