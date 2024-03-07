@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.function.ThrowingRunnable;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mockito;
 
@@ -36,6 +37,13 @@ public class FinancialTestAdvanced {
 
     @Test
     public void calculateChangeWithExceptionThrows() {
+        assertThrows(RateUnavailableException.class, new ThrowingRunnable() {
+            @Override
+            public void run() throws Throwable {
+                financial.calculateChange("CHF", "JPY", 1000D);
+            }
+        });
+
         assertThrows(RateUnavailableException.class, () -> {
             financial.calculateChange("CHF", "JPY", 1000D);
         });
@@ -75,5 +83,4 @@ public class FinancialTestAdvanced {
         assertTrue(heg.contains("error"));
         assertTrue(heg.contains("Not Found"));
     }
-
 }

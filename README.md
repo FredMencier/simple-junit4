@@ -1,6 +1,17 @@
 # simple-junit4
 Simple projet utilisant Junit4
 
+Sonar : port 9000
+- URL : http://localhost:9000/projects
+- user :
+- pawd :
+
+MySql : port 
+- user : 
+- pwd :
+
+
+
 mvn clean verify sonar:sonar \
 -Dsonar.projectKey=simple-junit \
 -Dsonar.projectName='simple-junit' \
